@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+    /* margin: 0; */
+    box-sizing: border-box;
+    font: inherit;
+}
+body {
+    height: 100vh;
+    font-family: Poppins;
+}
+
+/* .start-btn {
+
+} */
+.start-btn {
+    margin: 3rem auto 5rem auto;
+    display: block;
+    font-size: 1.5rem;
+    width: 16rem;
+    height: 4rem;
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .start-btn:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-start-btn 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing-start-btn {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+.start-btn:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+
+/* board styling */
+td {
+    padding: 3rem;
+    position: relative;
+}
+.s-1,
+.s-2,
+.s-3 {
+    border-bottom: .5rem solid;
+}
+.s-1,
+.s-4,
+.s-7 {
+    border-right: .5rem solid;
+}
+.s-3,
+.s-6,
+.s-9 {
+    border-left: .5rem solid;
+}
+.s-7,
+.s-8,
+.s-9 {
+    border-top: .5rem solid;
+}
+
+
+
+/* x move structure */
+.x-part {
+    width: 6.5rem;
+    height: .5rem;
+    padding: .25rem;
+    background-color: black;
+    z-index: 1;
+}
+.x-part-left {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.x-part-right {
+    transform: translate(-50%,-50%) rotate(135deg);
+}
+
+
+/* o move structure */
+.o-move {
+    height: 5rem;
+    aspect-ratio: 1/1;    
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+.o-void {
+    background-color: white;
+    height: 3.5rem;
+}
+
+
+/* utility classes */
+.center-pos-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.center-wrapper {
+    margin-inline: auto !important;
+}
+
+
+/*js classes*/
+.remove-element {
+    opacity: 0;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
